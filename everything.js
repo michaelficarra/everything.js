@@ -14,10 +14,12 @@ null; true; false;
 0X0; 0X0123456789abcdefABCDEF;
 
 ""; "'"; "\'\"\\\b\f\n\r\t\v\0";
+"\1\00\400\000";
 "\x01\x23\x45\x67\x89\xAB\xCD\xEF";
 "\u0123\u4567\u89AB\uCDEF";
 
 ''; '"'; '\'\"\\\b\f\n\r\t\v\0';
+'\1\00\400\000';
 '\x01\x23\x45\x67\x89\xAB\xCD\xEF';
 '\u0123\u4567\u89AB\uCDEF';
 
