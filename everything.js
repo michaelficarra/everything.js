@@ -1,4 +1,4 @@
-/* this file contains all grammatical productions in ECMA-262 edition 5.1 */
+/* this file contains all grammatical productions in ECMA-262 edition 5.1 ** * **/
 // most unicode and whitespace characters have been omitted
 
 var $, _, \u0078, x$, x_, x\u0030, xa, x0, x0a, x0123456789,
