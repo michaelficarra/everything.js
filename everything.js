@@ -8,10 +8,8 @@ null; true; false;
 
 0; 00; 1234567890; 01234567;
 0.; 0.00; 10.00; .0; .00
-0e0; 0.e0; 0.00e+0; .00e-0;
-0E0; 0.E0; 0.00E+0; .00E-0;
-0x0; 0x0123456789abcdefABCDEF;
-0X0; 0X0123456789abcdefABCDEF;
+0e0; 0E0; 0.e0; 0.00e+0; .00e-0;
+0x0; 0X0; 0x0123456789abcdefABCDEF;
 
 ""; "'"; "\'\"\\\b\f\n\r\t\v\0";
 "\1\00\400\000";
@@ -43,37 +41,31 @@ x;
 ({0:0}); ({0.:0}); ({0.0:0}); ({.0:0}); ({0e0:0}); ({0x0:0});
 ({get x() {}, set x(y) {}});
 
-0..a; .0.a; 0.0.a; 0e0.a; 0x0.a;
-"".a; ''.a; /x/.a; /x/i.a;
-this.a; [].a; ({}).a; (function(){}).a;
+0..a;
 
-0[0]; 0.[0]; .0[a]; 0.0[0]; 0e0[0]; 0x0[0];
-""[0]; ''[0]; /x/[0]; /x/i[0];
-this[0]; [][0]; {}[0]; (function(){})[0];
+0[0];
 
+// this function makes the NewExpression and CallExpression tests not throw at runtime
 x = function f(){ return f; }; x[0] = x; x.a = x;
-new x(); new new x()(); new new new x()()();
+
+new x(); new new x()();
 new x[0](); new x.a(); new x[0].a(); new x.a[0]();
-
 new x; new new x; new new x();
-
 new new x().a; new new x()[0];
 
 x++; x--;
 
-delete x; void x; typeof x; ++x; --x;
-+x; + +x; -x; - -x; ~x; ~~x; !x; !!x;
-+x++; -x.a--; + ++x; - --x; +-+-x;
+delete void typeof+-~!x; ++x; --x;
 
 0*0; 0/0; 0%0;
 
-0+0; 0-0; 0- -0; 0+ +0; 0 - - --x; 0 + + ++x;
+0+0; 0-0;
 
 0<<0; 0>>0; 0>>>0;
 
 0<0; 0>0; 0<=0; 0>=0;
 0 instanceof function(){};
-0 in {};
+0 in{};
 
 0==0; 0!=0; 0===0; 0!==0;
 
