@@ -20,4 +20,8 @@ suite("unit", function() {
     assert.notEqual(-1, programText.indexOf("\u2028"), "line separator");
     assert.notEqual(-1, programText.indexOf("\u2029"), "paragraph separator");
   });
+  test("contains identifier joining characters", function() {
+    assert.notEqual(-1, programText.indexOf("\u200C"), "ZWNJ");
+    assert.notEqual(-1, programText.indexOf("\u200D"), "ZWJ");
+  });
 });

@@ -21,7 +21,7 @@ paragraphSeparator:0 0;
 var $, _, \u0078, x$, x_, x\u0030, xa, x0, x0a, x0123456789,
   qwertyuiopasdfghjklzxcvbnm, QWERTYUIOPASDFGHJKLZXCVBNM;
 // a representative sample of unicode letters and numbers
-var œ一, ǻ둘, ɤ〩, φ, ﬁⅷ, ユニコード;
+var œ一, ǻ둘, ɤ〩, φ, ﬁⅷ, ユニコード, x‌‍;
 
 null; true; false;
 
