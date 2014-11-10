@@ -150,6 +150,17 @@ function f(x){}
 function f(x,y){}
 function f(){ function f(){} }
 
+function f(){ "use strict" }
+function f(){ 'use strict' }
+function f(){ "other directive" }
+function f(){ 'other directive' }
+function f(){ ("string") }
+function f(){ ('string') }
+function f(){
+  'string'
+  +0
+}
+
 (function(){});
 (function(x){});
 (function(x,y){});
