@@ -22,6 +22,7 @@ var $, _, \u0078, x$, x_, x\u0030, xa, x0, x0a, x0123456789,
   qwertyuiopasdfghjklzxcvbnm, QWERTYUIOPASDFGHJKLZXCVBNM;
 // a representative sample of unicode letters and numbers
 var œ一, ǻ둘, ɤ〩, φ, ﬁⅷ, ユニコード, x‌‍;
+var yield; let letx; let[x] = 0; const constx = 0;
 
 null; true; false;
 
@@ -113,6 +114,7 @@ var x=0; var x=0,y; var x,y=0; var x=0,y=0;
 
 if(0); if(0);else;
 
+do;while(0) 0;
 do;while(0);
 while(0);
 for(;;)break; for(0;0;0); for((0 in[]);0;);
@@ -120,6 +122,7 @@ for(var a;;)break; for(var a,b;0;0);
 for(var a=0;;)break; for(var a=(0 in[]);0;);
 for(x in{}); for(var x in{});
 for(var x=[]in{}); for(var x=(0 in[])in{});
+for(x of[]); for(var x of[]);
 
 for(;0;)continue; x:for(;0;)continue x;
 
@@ -150,6 +153,9 @@ function f(){}
 function f(x){}
 function f(x,y){}
 function f(){ function f(){} }
+{ function f(){} };
+for (;0;) label: function f(){} 0
+do label: function f(){} while(0)
 
 function f(){ "use strict" }
 function f(){ 'use strict' }
