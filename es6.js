@@ -67,14 +67,15 @@ x;
 ({
   0: 0, 0.: 0, 0.0: 0, .0: 0, 0e0: 0, 0x0: 0, [0]: 0,
   get x(){}, set x(a){}, get 'y'(){}, set "y"(a){},
-  get 0(){}, set 0(a){}, get var(){}, set var(x){},
-  get [0](){}, set [0](){}, [1](){},
+  get 0(){}, set 0(a){}, get var(){}, set var(a){},
+  get [0](){}, set [0](a){}, [1](){},
   a(){}, 'b'(){}, "c"(){}, 0(){}, .1(){}, 1.(){}, 1e1(){},
-  var(a, b = 0, [c], [d = 0], {e, f: g, h = 0, i: j = 0}, ...k){},
+  var(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){},
+  set in([a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k]){},
   *d(){}, *'e'(){}, *"f"(){}, *2(){}, *.2(){}, *3.(){}, *2e2(){}, *in(){},
 });
 
-0..a;
+0..a; 0 .a; (0).a;
 
 0[0];
 
@@ -168,6 +169,7 @@ function f(){ function f(){} }
 for (;0;) label: function f(){} 0
 do label: function f(){} while(0)
 
+function f(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){}
 function f(){ "use strict" }
 function f(){ 'use strict' }
 function f(){ "other directive" }
@@ -179,6 +181,16 @@ function f(){
   +0
 }
 
+function*g(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){
+  return a = yield* b = yield c = yield yield;
+}
+(function * g(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){
+  return a = yield* b = yield c = yield yield;
+})
+yield;
+yield +0;
+yield * 0;
+
 (function(){});
 (function(x){});
 (function(x,y){});
@@ -187,3 +199,25 @@ function f(){
 (function f(x){});
 (function f(x,y){});
 (function f(){ function f(){} });
+
+[a] = {};
+({a} = {});
+try{}catch([e]){}
+try{}catch({e}){}
+
+class A {}
+class B extends new A {
+  constructor() {
+    super();
+    super()`template`;
+  }
+  static a() {}
+  static *b() {}
+  c() {
+    super.c();
+    super.c`template`;
+  }
+  *d() {}
+  get e() {}
+  set e(f) {}
+}
