@@ -24,6 +24,7 @@ var $, _, \u0078, x$, x_, x\u0030, xa, x0, x0a, x0123456789,
 // a representative sample of unicode letters and numbers
 var œ一, ǻ둘, ɤ〩, φ, ﬁⅷ, ユニコード, x‌‍;
 var yield; let letx; let[x] = 0; const constx = 0;
+{ let x; let y = 0; const z = 0; }
 
 null; true; false;
 
@@ -38,13 +39,15 @@ null; true; false;
 ""; "'"; "\'\"\\\b\f\n\r\t\v\0";
 "\1\00\400\000";
 "\x01\x23\x45\x67\x89\xAB\xCD\xEF";
-"\u0123\u4567\u89AB\uCDEF"; "\
+"\u0123\u4567\u89AB\uCDEF";
+"\uD834\uDF06\u2603\u03C6 𝌆☃φ"; "\
 ";
 
 ''; '"'; '\'\"\\\b\f\n\r\t\v\0';
 '\1\00\400\000';
 '\x01\x23\x45\x67\x89\xAB\xCD\xEF';
-'\u0123\u4567\u89AB\uCDEF'; '\
+'\u0123\u4567\u89AB\uCDEF';
+'\uD834\uDF06\u2603\u03C6 𝌆☃φ'; '\
 ';
 
 /x/; /|/; /|||/;
@@ -74,6 +77,8 @@ x;
   set in([a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k]){},
   *d(){}, *'e'(){}, *"f"(){}, *2(){}, *.2(){}, *3.(){}, *2e2(){}, *in(){},
 });
+({ __proto__: null, get __proto__(){}, set __proto__(a){}, });
+({ "__proto__": null, __proto__(){}, });
 
 0..a; 0 .a; (0).a;
 
@@ -207,17 +212,29 @@ try{}catch({e}){}
 
 class A {}
 class B extends new A {
-  constructor() {
-    super();
+  constructor(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k) {
+    super(new.target);
     super()`template`;
   }
-  static a() {}
-  static *b() {}
-  c() {
-    super.c();
-    super.c`template`;
+  m(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k) {
+    super.m();
+    super.m`template`;
   }
-  *d() {}
-  get e() {}
-  set e(f) {}
+
+  static a(){} static 'b'(){} static 0(){} static [0](){}
+  static *c(){ yield; } static *"d"() { yield; } static *1(){ yield; } static *[1](){ yield; }
+  static var(){} static *in(){}
+
+  static get e(){} static get 'f'(){} static get 2(){} static get [2](){}
+  static set g(a){} static set "h"(a){} static set 3(a){} static set [3](a){}
+  static get if(){} static set if(a){}
+
+  a(){} 'b'(){} 0(){} [0](){}
+  *c(){ yield; } *"d"(){ yield; } *1(){ yield; } *[1](){ yield; }
+  var(){} *in(){ yield; }
+
+  get e(){} get 'f'(){} get 2(){} get [2](){}
+  set g(a){} set "h"(a){} set 3(a){} set [3](a){}
+  get if() {} set if(f) {}
 }
+class C { "constructor"(){ super(); } }
