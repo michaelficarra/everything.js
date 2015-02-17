@@ -38,27 +38,30 @@ null; true; false;
 
 ""; "'"; "\'\"\\\b\f\n\r\t\v\0";
 "\1\00\400\000";
-"\x01\x23\x45\x67\x89\xAB\xCD\xEF";
-"\u0123\u4567\u89AB\uCDEF";
-"\uD834\uDF06\u2603\u03C6 𝌆☃φ"; "\
+"\x01\x23\x45\x67\x89\xAB\xCD\xEF\xab\xcd\xef";
+"\u0123\u4567\u89AB\uCDEF\u00ab\ucdef";
+"\uD834\uDF06\u2603\u03C6 \u{1D306}\u{2603}\u{3c6} 𝌆☃φ"; "\
 ";
 
 ''; '"'; '\'\"\\\b\f\n\r\t\v\0';
 '\1\00\400\000';
-'\x01\x23\x45\x67\x89\xAB\xCD\xEF';
-'\u0123\u4567\u89AB\uCDEF';
-'\uD834\uDF06\u2603\u03C6 𝌆☃φ'; '\
+'\x01\x23\x45\x67\x89\xAB\xCD\xEF\xab\xcd\xef';
+'\u0123\u4567\u89AB\uCDEF\u00ab\ucdef';
+'\uD834\uDF06\u2603\u03C6 \u{1D306}\u{2603}\u{3c6} 𝌆☃φ'; '\
 ';
 
 /x/; /|/; /|||/;
 /^$\b\B/; /(?=(?!(?:(.))))/;
-/a.\f\n\r\t\v\0\[\-\/\\\x00\u0000/; /\d\D\s\S\w\W/;
+/a.\f\n\r\t\v\0\[\-\/\\\x00\u0000\uD834\uDF06\u{1d306}/; /\d\D\s\S\w\W/;
 /\ca\cb\cc\cd\ce\cf\cg\ch\ci\cj\ck\cl\cm\cn\co\cp\cq\cr\cs\ct\cu\cv\cw\cx\cy\cz/;
 /\cA\cB\cC\cD\cE\cF\cG\cH\cI\cJ\cK\cL\cM\cN\cO\cP\cQ\cR\cS\cT\cU\cV\cW\cX\cY\cZ/;
 /[a-z-]/; /[^\b\-^]/; /[/\]\\]/;
 /./i; /./g; /./m; /./igm;
 /.*/; /.*?/; /.+/; /.+?/; /.?/; /.??/;
 /.{0}/; /.{0,}/; /.{0,0}/;
+
+`a`; `${0}`; `0${0,1}2`; `0${`1${2}3`}4`;
+`\``; `a\${b`; `\0\n\x0A\u000A\u{A}`;
 
 this;
 
@@ -94,6 +97,8 @@ new new x().a; new new x()[0];
 
 x(); x()(); x(x); x(x, x);
 x.a().a(); x[0]()[0](); x().a[0]();
+x(...[0,1,], ...[], ...function* f(){ return yield 2; });
+x`a`; x`0${1}2`;
 
 x++; x--;
 
@@ -132,7 +137,7 @@ if(0); if(0);else;
 
 do;while(0) 0;
 do;while(0);
-do;while(0)
+do;while(0) 0
 while(0);
 for(;;)break; for(0;0;0); for((0 in[]);0;);
 for(var a;;)break; for(var a,b;0;0);
@@ -205,7 +210,7 @@ yield * 0;
 (function f(x,y){});
 (function f(){ function f(){} });
 
-[a] = {};
+[a] = [...[0]];
 ({a} = {});
 try{}catch([e]){}
 try{}catch({e}){}
