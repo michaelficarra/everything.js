@@ -210,6 +210,19 @@ yield * 0;
 (function f(x,y){});
 (function f(){ function f(){} });
 
+() => 0
+() => {;}
+x => x
+x => x = 0
+x => y => x
+x => {x}
+x => ({x})
+(x) => x
+(x) => {return x}
+(x) => ({x})
+({x}) => ({x})
+(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k) = {;}
+
 [a] = [...[0]];
 ({a} = {});
 try{}catch([e]){}
@@ -220,10 +233,12 @@ class B extends new A {
   constructor(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k) {
     super(new.target);
     super()`template`;
+    () => super(this);
   }
   m(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k) {
     super.m();
     super.m`template`;
+    () => super.m(this);
   }
 
   static a(){} static 'b'(){} static 0(){} static [0](){}
