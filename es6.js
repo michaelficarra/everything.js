@@ -75,19 +75,19 @@ null; true; false;
 "\1\00\400\000";
 "\x01\x23\x45\x67\x89\xAB\xCD\xEF\xab\xcd\xef";
 "\u0123\u4567\u89AB\uCDEF\u00ab\ucdef";
-"\uD834\uDF06\u2603\u03C6 \u{1D306}\u{2603}\u{3c6} 𝌆☃φ"; "\
+"\uD834\uDF06\u2603\u03C6 \u{0000001F4a9}\u{1D306}\u{2603}\u{3c6} 𝌆☃φ"; "\
 ";
 
 ''; '"'; '\'\"\\\b\f\n\r\t\v\0';
 '\1\00\400\000';
 '\x01\x23\x45\x67\x89\xAB\xCD\xEF\xab\xcd\xef';
 '\u0123\u4567\u89AB\uCDEF\u00ab\ucdef';
-'\uD834\uDF06\u2603\u03C6 \u{1D306}\u{2603}\u{3c6} 𝌆☃φ'; '\
+'\uD834\uDF06\u2603\u03C6 \u{0000001F4a9} \u{1D306}\u{2603}\u{3c6} 𝌆☃φ'; '\
 ';
 
 /x/; /|/; /|||/;
 /^$\b\B/; /(?=(?!(?:(.))))/;
-/a.\f\n\r\t\v\0\[\-\/\\\x00\u0000\uD834\uDF06\u{1d306}/; /\d\D\s\S\w\W/;
+/a.\f\n\r\t\v\0\[\-\/\\\x00\u0000\uD834\uDF06\u{00000001d306}/; /\d\D\s\S\w\W/;
 /\ca\cb\cc\cd\ce\cf\cg\ch\ci\cj\ck\cl\cm\cn\co\cp\cq\cr\cs\ct\cu\cv\cw\cx\cy\cz/;
 /\cA\cB\cC\cD\cE\cF\cG\cH\cI\cJ\cK\cL\cM\cN\cO\cP\cQ\cR\cS\cT\cU\cV\cW\cX\cY\cZ/;
 /[a-z-]/; /[^\b\-^]/; /[/\]\\]/;
