@@ -1,6 +1,41 @@
 /* this file contains all grammatical productions in ECMA-262 edition 5.1 ** * **/
 <!-- HTML-style comments -->
 
+import i0 from "module";
+import * as i1 from "module";
+import {} from "module";
+import { i2, a as i3, } from "module";
+import i4, * as i5 from "module";
+import i6, {} from "module";
+import i7, { i8, var as i9 } from "module";
+import "module";
+
+export * from "module";
+export {} from "module";
+export { i0, i1 as a, i2 as var, } from "module";
+export {};
+export { i3, i4 as in };
+export var i5, i6 = 0;
+export let i7, i8 = 0;
+export const i9 = 0, i10 = 0;
+export function i11(){}
+export function* i12(){}
+export class i13 {}
+export class i13 extends i14 {}
+export default function i15(){}
+// Unfortunately (for us), we can only have a single default export.
+/*
+export default function (){}
+export default function* i16(){}
+export default function* (){}
+export default class i17 {}
+export default class i18 extends i19 {}
+export default class {}
+export default x = 0;
+export default 0;
+export default (0, 1);
+*/
+
 // whitespace
 tab:for(;;)break	tab;
 verticalTab:for(;;)breakverticalTab;
