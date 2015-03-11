@@ -1,5 +1,4 @@
 /* this file contains all grammatical productions in ECMA-262 edition 5.1 ** * **/
-<!-- HTML-style comments -->
 
 import i0 from "module";
 import * as i1 from "module";
@@ -10,6 +9,7 @@ import i6, {} from "module";
 import i7, { i8, var as i9 } from "module";
 import "module";
 
+var i0, i1, i2, i3, i4;
 export * from "module";
 export {} from "module";
 export { i0, i1 as a, i2 as var, } from "module";
@@ -21,8 +21,8 @@ export const i9 = 0, i10 = 0;
 export function i11(){}
 export function* i12(){}
 export class i13 {}
-export class i13 extends i14 {}
-export default function i15(){}
+export class i14 extends i15 {}
+export default function i16(){}
 // Unfortunately (for us), we can only have a single default export.
 /*
 export default function (){}
@@ -57,13 +57,13 @@ paragraphSeparator:0 0;
 var $, _, \u0078, \u{2F9F9}, x$, x_, x\u0030, x\u{e01d5}, xa, x0, x0a,
   x0123456789, qwertyuiopasdfghjklzxcvbnm, QWERTYUIOPASDFGHJKLZXCVBNM;
 // a representative sample of ID_Start and ID_Continue
-var 䩶, x󠇕, œ一, ǻ둘, ɤ〩, φ, ﬁⅷ, ユニコード, x‌‍;
-var yield; let letx; let[x] = 0; const constx = 0;
+var 䩶, x󠇕, œ一, ǻ둘, ɤ〩, φ, ﬁⅷ, ユニコード, x‌‍;
+let letx; let[x\u0078] = 0; const constx = 0;
 { let x; let y = 0; const z = 0; }
 
 null; true; false;
 
-0; 00; 1234567890; 01234567;
+0; 1234567890;
 0.; 0.00; 10.00; .0; .00
 0e0; 0E0; 0.e0; 0.00e+0; .00e-0;
 0x0; 0X0; 0x0123456789abcdefABCDEF;
@@ -72,14 +72,14 @@ null; true; false;
 2e308;
 
 ""; "'"; "\'\"\\\b\f\n\r\t\v\0";
-"\1\00\400\000";
+"\0";
 "\x01\x23\x45\x67\x89\xAB\xCD\xEF\xab\xcd\xef";
 "\u0123\u4567\u89AB\uCDEF\u00ab\ucdef";
 "\uD834\uDF06\u2603\u03C6 \u{0000001F4a9}\u{1D306}\u{2603}\u{3c6} 𝌆☃φ"; "\
 ";
 
 ''; '"'; '\'\"\\\b\f\n\r\t\v\0';
-'\1\00\400\000';
+'\0';
 '\x01\x23\x45\x67\x89\xAB\xCD\xEF\xab\xcd\xef';
 '\u0123\u4567\u89AB\uCDEF\u00ab\ucdef';
 '\uD834\uDF06\u2603\u03C6 \u{0000001F4a9} \u{1D306}\u{2603}\u{3c6} 𝌆☃φ'; '\
@@ -163,8 +163,8 @@ x<<=0; x>>=0; x>>>=0; x&=0; x^=0; x|=0;
 
 {} {;} {0} {0;} {0;0} {0;0;}
 
-var x; var x,y; var x,y,z;
-var x=0; var x=0,y; var x,y=0; var x=0,y=0;
+var x0; var x1,y2; var x3,y4,z5;
+var x6=0; var x7=0,y8; var x9,y10=0; var x11=0,y12=0;
 
 ;
 
@@ -175,21 +175,18 @@ do;while(0);
 do;while(0) 0
 while(0);
 for(;;)break; for(0;0;0); for((0 in[]);0;);
-for(var a;;)break; for(var a,b;0;0);
-for(var a=0;;)break; for(var a=(0 in[]);0;);
-for(x in{}); for(var x in{});
-for(var x=[]in{}); for(var x=(0 in[])in{});
-for(x of[]); for(var x of[]);
+for(var a0;;)break; for(var a1,b2;0;0);
+for(var a3=0;;)break; for(var a4=(0 in[]);0;);
+for(x in{}); for(var x12 in{});
+for(x of[]); for(var x13 of[]);
 
 for(;0;)continue; x:for(;0;)continue x;
 
 for(;;)break; x:for(;;)break x;
 switch(0){case 0:break;}
 
-function f(){ return; }
-function f(){ return 0; }
-
-with(0);
+function f0(){ return; }
+function f1(){ return 0; }
 
 switch(0){} switch(0){case 0:} switch(0){case 0:case 0:}
 switch(0){default:} switch(0){case 0:default:case 0:}
@@ -206,35 +203,32 @@ try{}catch(x){}finally{}
 
 debugger;
 
-function f(){}
-function f(x){}
-function f(x,y){}
-function f(){ function f(){} }
-{ function f(){} };
-for (;0;) label: function f(){} 0
-do label: function f(){} while(0)
+function f2(){}
+function f3(x){}
+function f4(x,y){}
+function f5(){ function f6(){} }
+{ function f7(){} };
+for (;0;) +function f8(){}; 0
+do +function f9(){}; while(0)
 
-function f(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){}
-function f(){ "use strict" }
-function f(){ 'use strict' }
-function f(){ "other directive" }
-function f(){ 'other directive' }
-function f(){ ("string") }
-function f(){ ('string') }
-function f(){
+function f10(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){}
+function f11(){ "use strict" }
+function f12(){ 'use strict' }
+function f13(){ "other directive" }
+function f14(){ 'other directive' }
+function f15(){ ("string") }
+function f16(){ ('string') }
+function f17(){
   'string'
   +0
 }
 
-function*g(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){
+function*g0(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){
   return a = yield* b = yield c = yield yield;
 }
-(function * g(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){
+(function * g1(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k){
   return a = yield* b = yield c = yield yield;
 })
-yield;
-yield +0;
-yield * 0;
 
 (function(){});
 (function(x){});
@@ -245,18 +239,18 @@ yield * 0;
 (function f(x,y){});
 (function f(){ function f(){} });
 
-() => 0
+() => 0;
 () => {;}
 x => x
 x => x = 0
 x => y => x
 x => {x}
-x => ({x})
-(x) => x
-(x) => {return x}
-(x) => ({x})
-({x}) => ({x})
-(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k) = {;}
+x => ({x});
+(x) => x;
+(x) => {return x};
+(x) => ({x});
+({x}) => ({x});
+(a, b = 0, [c,, d = 0, ...e], {f, g: h, i = 0, i: j = 0}, ...k) => {;};
 
 [a] = [...[0]];
 ({a} = {});
@@ -292,4 +286,4 @@ class B extends new A {
   set g(a){} set "h"(a){} set 3(a){} set [3](a){}
   get if() {} set if(f) {}
 }
-class C { "constructor"(){ super(); } }
+class C extends B { "constructor"(){ super(); } }
