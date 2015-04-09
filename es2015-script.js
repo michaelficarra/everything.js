@@ -52,7 +52,7 @@ null; true; false;
 
 /x/; /|/; /|||/;
 /^$\b\B/; /(?=(?!(?:(.))))/;
-/a.\f\n\r\t\v\0\[\-\/\\\x00\u0000\uD834\uDF06\u{00000001d306}/; /\d\D\s\S\w\W/;
+/a.\f\n\r\t\v\0\[\-\/\\\x00\u0000\uD834\uDF06/; /\u{00000001d306}/u; /\d\D\s\S\w\W/;
 /\ca\cb\cc\cd\ce\cf\cg\ch\ci\cj\ck\cl\cm\cn\co\cp\cq\cr\cs\ct\cu\cv\cw\cx\cy\cz/;
 /\cA\cB\cC\cD\cE\cF\cG\cH\cI\cJ\cK\cL\cM\cN\cO\cP\cQ\cR\cS\cT\cU\cV\cW\cX\cY\cZ/;
 /[a-z-]/; /[^\b\-^]/; /[/\]\\]/;
