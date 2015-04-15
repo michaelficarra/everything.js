@@ -9,20 +9,19 @@ import i6, {} from "module";
 import i7, { i8, var as i9 } from "module";
 import "module";
 
-var i0, i1, i2, i3, i4;
 export * from "module";
 export {} from "module";
 export { i0, i1 as a, i2 as var, } from "module";
 export {};
 export { i3, i4 as in };
-export var i5, i6 = 0;
-export let i7, i8 = 0;
-export const i9 = 0, i10 = 0;
-export function i11(){}
-export function* i12(){}
-export class i13 {}
-export class i14 extends i15 {}
-export default function i16(){}
+export var e5, e6 = 0;
+export let e7, e8 = 0;
+export const e9 = 0, e10 = 0;
+export function e11(){}
+export function* e12(){}
+export class e13 {}
+export class e14 extends e15 {}
+export default function e16(){}
 // Unfortunately (for us), we can only have a single default export.
 /*
 export default function (){}
