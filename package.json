@@ -1,6 +1,6 @@
 {
   "name": "everything.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a single javascript file that contains every ECMA-262 edition 5.1 grammatical production",
   "main": "es5.js",
   "scripts": {
