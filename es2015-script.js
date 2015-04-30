@@ -240,6 +240,8 @@ class B extends new A {
     () => super.m(this);
   }
 
+  ;
+
   static a(){} static 'b'(){} static 0(){} static [0](){}
   static *c(){ yield; } static *"d"() { yield; } static *1(){ yield; } static *[1](){ yield; }
   static var(){} static *in(){}
