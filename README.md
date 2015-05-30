@@ -1,7 +1,7 @@
 everything.js
 =============
 
-A single javascript file that contains every ECMA-262 edition 5.1 grammatical production.
+A single javascript file that contains every ECMA-262 grammatical production.
 
 ### Usage Example
 
