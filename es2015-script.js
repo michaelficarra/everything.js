@@ -25,6 +25,7 @@ var $, _, \u0078, \u{2F9F9}, x$, x_, x\u0030, x\u{e01d5}, xa, x0, x0a,
 var 䩶, x󠇕, œ一, ǻ둘, ɤ〩, φ, ﬁⅷ, ユニコード, x‌‍;
 var yield; let letx; let[x\u0078] = 0; const constx = 0;
 { let x; let y = 0; const z = 0; }
+var let; var await;
 
 null; true; false;
 
